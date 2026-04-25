@@ -98,13 +98,15 @@ class AdventureLayout extends StatelessWidget {
                               mainAxisSpacing: 16,
                               crossAxisSpacing: 16,
                               childAspectRatio:
-                                  1.2, // Atur tinggi kotak di sini
+                                  1.1, // Atur tinggi kotak di sini
                             ),
                         delegate: SliverChildBuilderDelegate(
                           (context, index) {
                             final lesson = lessons[index];
                             return DynamicButton(
                               model: DynamicButtonModel(
+                                fontColor: AppColors.white,
+                                shadowColor: Colors.black.withAlpha(50),
                                 label: lesson['lesson_title'],
                                 backgroundColor: Colors.blue,
                               ),
@@ -115,6 +117,8 @@ class AdventureLayout extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    SliverToBoxAdapter(child: SizedBox(height: 20)),
                   ],
                 ),
               ),

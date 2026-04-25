@@ -37,7 +37,7 @@ class _DynamicButtonState extends State<DynamicButton> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 100), // Durasi transisi
           curve: Curves.easeOut,
-          width: 150,
+          width: 10,
           height: 150,
           // 3. Efek Bergerak ke Bawah saat ditekan (Wajib disamakan dengan Offset shadow = 8)
           transform: Matrix4.translationValues(0, _isPressed ? 8 : 0, 0),

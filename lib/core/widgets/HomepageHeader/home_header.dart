@@ -26,9 +26,14 @@ class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
                   Container(
                     width: 50,
                     height: 50,
+                    clipBehavior: Clip.hardEdge,
                     decoration: BoxDecoration(
                       color: Colors.green,
                       borderRadius: BorderRadius.all(Radius.circular(100)),
+                    ),
+                    child: Image.network(
+                      "https://i.pravatar.cc/150?img=12",
+                      fit: BoxFit.cover,
                     ),
                   ),
 
@@ -59,9 +64,15 @@ class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
                   Container(
                     width: 35,
                     height: 35,
+                    clipBehavior: Clip.hardEdge,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.green,
                       borderRadius: BorderRadius.all(Radius.circular(100)),
+                    ),
+                    // national flag
+                    child: Image.network(
+                      "https://flagcdn.com/w40/gb.png",
+                      fit: BoxFit.cover,
                     ),
                   ),
                   IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
