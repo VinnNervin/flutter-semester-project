@@ -17,7 +17,7 @@ class HomepageNavigation extends StatelessWidget {
     return SafeArea(
       child: Container(
         height: 70,
-        decoration: BoxDecoration(color: AppColors.primaryLight),
+        decoration: BoxDecoration(color: AppColors.white),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

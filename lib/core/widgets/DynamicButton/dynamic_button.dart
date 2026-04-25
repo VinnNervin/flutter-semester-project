@@ -1,15 +1,15 @@
 import 'dart:math';
 
-import 'package:first_app/core/widgets/DynamicButton/dynamic_button_model.dart';
+import 'package:first_app/core/widgets/DynamicButton/dynamic_button_config.dart';
 import 'package:first_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 enum ButtonType { gold, normal }
 
 class DynamicButton extends StatefulWidget {
-  final DynamicButtonModel model;
+  final DynamicButtonConfig config;
 
-  const DynamicButton({super.key, required this.model});
+  const DynamicButton({super.key, required this.config});
 
   @override
   State<DynamicButton> createState() => _DynamicButtonState();
@@ -30,8 +30,8 @@ class _DynamicButtonState extends State<DynamicButton> {
         // 2. onTapCancel penting agar bila user berniat men-scroll, tombol tidak nyangkut posisi tertekan
         onTapCancel: () => setState(() => _isPressed = false),
         onTap: () {
-          if (widget.model.onPressed != null) {
-            widget.model.onPressed!();
+          if (widget.config.onPressed != null) {
+            widget.config.onPressed!();
           }
         },
         child: AnimatedContainer(
@@ -49,9 +49,9 @@ class _DynamicButtonState extends State<DynamicButton> {
                 ? []
                 : [
                     BoxShadow(
-                      color: widget.model.isGoldButton
+                      color: widget.config.isGoldButton
                           ? AppColors.orangeAccent
-                          : widget.model.shadowColor,
+                          : widget.config.shadowColor,
                       offset: const Offset(0, 8),
                       blurRadius: 0,
                     ),
@@ -62,13 +62,13 @@ class _DynamicButtonState extends State<DynamicButton> {
               // BOX UTAMA
               Container(
                 decoration: BoxDecoration(
-                  color: widget.model.isGoldButton
+                  color: widget.config.isGoldButton
                       ? AppColors.orangeAccent
-                      : widget.model.backgroundColor,
+                      : widget.config.backgroundColor,
                   border: Border.all(
-                    color: widget.model.isGoldButton
+                    color: widget.config.isGoldButton
                         ? AppColors.orange
-                        : widget.model.borderColor,
+                        : widget.config.borderColor,
                     width: 7,
                   ),
                   borderRadius: BorderRadius.circular(20),
@@ -77,18 +77,18 @@ class _DynamicButtonState extends State<DynamicButton> {
                 width: double.infinity,
                 height: double.infinity,
                 child: Text(
-                  widget.model.label,
+                  widget.config.label,
                   style: TextStyle(
-                    fontWeight: FontWeight(widget.model.fontWeight),
-                    fontSize: widget.model.fontSize,
-                    color: widget.model.isGoldButton
+                    fontWeight: FontWeight(widget.config.fontWeight),
+                    fontSize: widget.config.fontSize,
+                    color: widget.config.isGoldButton
                         ? AppColors.orange
-                        : widget.model.fontColor,
+                        : widget.config.fontColor,
                   ),
                 ),
               ),
 
-              if (widget.model.isGoldButton)
+              if (widget.config.isGoldButton)
                 Positioned(
                   top: 15,
                   left: -30,
@@ -104,7 +104,7 @@ class _DynamicButtonState extends State<DynamicButton> {
                   ),
                 ),
 
-              if (widget.model.isGoldButton)
+              if (widget.config.isGoldButton)
                 Positioned(
                   bottom: 0,
                   right: -30,

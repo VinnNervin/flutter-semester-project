@@ -1,7 +1,8 @@
 import 'package:first_app/core/widgets/MainButton/main_button.dart';
-import 'package:first_app/core/widgets/MainButton/main_button_model.dart';
+import 'package:first_app/core/widgets/MainButton/main_button_config.dart';
 import 'package:first_app/features/auth/widgets/auth_textfield.dart';
 import 'package:first_app/theme/app_colors.dart';
+import 'package:first_app/theme/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
@@ -39,12 +40,34 @@ class LoginForm extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            confirmPasswordController != null ? "Get Started" : "Welcome Back",
+            confirmPasswordController != null ? "Sign Up" : "Sign In",
             style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w900,
+              fontSize: AppFonts.fontXLarge,
+              fontWeight: FontWeight.bold,
               color: AppColors.primary,
             ),
+          ),
+          Text.rich(
+            confirmPasswordController != null
+                ? TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Welcome To ",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      TextSpan(
+                        text: "Speak Up",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    ],
+                  )
+                : TextSpan(text: "Welcome back"),
           ),
           const SizedBox(height: 20),
           AuthTextfield(
@@ -76,7 +99,7 @@ class LoginForm extends StatelessWidget {
           ],
           const SizedBox(height: 26),
           MainButton(
-            model: MainButtonModel(
+            config: MainButtonConfig(
               width: double.infinity,
               shadowColor: AppColors.primary.withValues(alpha: 0.5),
               label: (confirmPasswordController != null
@@ -90,9 +113,9 @@ class LoginForm extends StatelessWidget {
           GestureDetector(
             onTap: () {
               if (confirmPasswordController != null) {
-                Navigator.pushReplacementNamed(context, "/");
+                Navigator.popAndPushNamed(context, "/");
               } else {
-                Navigator.pushReplacementNamed(context, '/signup');
+                Navigator.popAndPushNamed(context, '/signup');
               }
             },
             child: Text.rich(

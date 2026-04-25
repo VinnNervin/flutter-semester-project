@@ -24,7 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
 
     if (success) {
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.popAndPushNamed(context, '/home');
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(const SnackBar(content: Text('login success')));
@@ -57,7 +57,7 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
         ),
         height: double.infinity,
-        alignment: Alignment.bottomCenter, // <-- Ini Flex-End
+        alignment: Alignment.bottomCenter,
         child: LoginForm(
           emailController: emailController,
           passwordController: passwordController,

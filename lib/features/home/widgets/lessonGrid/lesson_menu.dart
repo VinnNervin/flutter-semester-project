@@ -1,15 +1,18 @@
-import 'package:first_app/features/home/models/lesson_menu_model.dart';
-import 'package:first_app/features/home/widgets/lesson_grid_item.dart';
+import 'package:first_app/features/home/widgets/lessonGrid/lesson_menu_config.dart';
+import 'package:first_app/features/home/widgets/introText/intro_text.dart';
+import 'package:first_app/features/home/widgets/lessonGridItem/lesson_grid_item.dart';
 import 'package:first_app/theme/app_colors.dart';
+import 'package:first_app/theme/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 class LessonMenu extends StatelessWidget {
   const LessonMenu({super.key});
 
-  static const List<LessonMenuModel> _lessonMenus = [
-    LessonMenuModel(
+  static const List<LessonMenuConfig> _lessonMenus = [
+    LessonMenuConfig(
       label: "PETUALANGAN",
+      fontSize: AppFonts.fontLarge,
       icon: LucideIcons.mapPinned,
       backgroundColor: AppColors.primary,
       iconColor: AppColors.primaryAccent,
@@ -19,7 +22,7 @@ class LessonMenu extends StatelessWidget {
       bottom: -40,
     ),
 
-    LessonMenuModel(
+    LessonMenuConfig(
       label: "KOSAKATA",
       icon: LucideIcons.bookMarked,
       backgroundColor: AppColors.blue,
@@ -27,21 +30,21 @@ class LessonMenu extends StatelessWidget {
       right: -20,
       bottom: -40,
     ),
-    LessonMenuModel(
+    LessonMenuConfig(
       label: "KUIS",
       icon: LucideIcons.fileQuestionMark,
       backgroundColor: AppColors.orange,
       iconColor: AppColors.orangeAccent,
     ),
-    LessonMenuModel(
-      label: "MENDENGARKAN",
+    LessonMenuConfig(
+      label: "MENDENGAR",
       icon: LucideIcons.headphones,
       backgroundColor: AppColors.secondary,
       bottom: -10,
       iconColor: AppColors.secondaryAccent,
       angle: 20,
     ),
-    LessonMenuModel(
+    LessonMenuConfig(
       label: "BERBICARA",
       icon: Icons.mic_none_outlined,
       right: -30,
@@ -56,14 +59,7 @@ class LessonMenu extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'PELAJARAN',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-              color: AppColors.primaryAccent,
-            ),
-          ),
+          IntroText(),
           const SizedBox(height: 15),
           LayoutBuilder(
             builder: (context, constraints) {
@@ -91,6 +87,7 @@ class LessonMenu extends StatelessWidget {
                           print('click');
                         },
                         child: LessonGridItem(
+                          fontSize: menu.fontSize,
                           label: menu.label,
                           icon: menu.icon,
                           angle: menu.angle,

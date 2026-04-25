@@ -11,6 +11,7 @@ class AuthTextfield extends StatelessWidget {
   final bool enableSuggestions;
   final IconData icon;
   final String additionalText;
+  final Color labelColor;
 
   const AuthTextfield({
     super.key,
@@ -22,6 +23,7 @@ class AuthTextfield extends StatelessWidget {
     this.autocorrect = true,
     this.enableSuggestions = true,
     this.icon = Icons.person,
+    this.labelColor = AppColors.primary,
     this.additionalText = "",
   });
 
@@ -34,13 +36,10 @@ class AuthTextfield extends StatelessWidget {
             Text(
               label,
               textDirection: TextDirection.ltr,
-              style: TextStyle(
-                fontWeight: FontWeight.w700,
-                color: Colors.black87,
-              ),
+              style: TextStyle(fontWeight: FontWeight.w700, color: labelColor),
             ),
             Spacer(),
-            if (additionalText != "")
+            if (additionalText.isNotEmpty)
               Text(
                 additionalText,
                 textDirection: TextDirection.ltr,

@@ -1,13 +1,10 @@
-import 'dart:math';
-
-import 'package:first_app/core/widgets/MainButton/main_button_model.dart';
-import 'package:first_app/theme/app_colors.dart';
+import 'package:first_app/core/widgets/MainButton/main_button_config.dart';
 import 'package:flutter/material.dart';
 
 class MainButton extends StatefulWidget {
-  final MainButtonModel model;
+  final MainButtonConfig config;
 
-  const MainButton({super.key, required this.model});
+  const MainButton({super.key, required this.config});
 
   @override
   State<MainButton> createState() => _MainButtonState();
@@ -26,24 +23,24 @@ class _MainButtonState extends State<MainButton> {
       onTapUp: (_) => setState(() => _isPressed = false),
       onTapCancel: () => setState(() => _isPressed = false),
       onTap: () {
-        if (widget.model.onPressed != null) {
-          widget.model.onPressed!();
+        if (widget.config.onPressed != null) {
+          widget.config.onPressed!();
         }
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100), // Durasi transisi
         curve: Curves.easeOut,
-        width: widget.model.width,
-        height: widget.model.height,
+        width: widget.config.width,
+        height: widget.config.height,
         // 3. Jarak efek bergerak animasi (WAJIB SAMA DENGAN OFFSET Y DI BAWAH)
         transform: Matrix4.translationValues(0, _isPressed ? 4 : 0, 0),
         decoration: BoxDecoration(
-          color: widget.model.backgroundColor,
-          // Mencegah border hairline 1px jika ukurannya diseting 0 di model
-          border: widget.model.borderWidth > 0
+          color: widget.config.backgroundColor,
+          // Mencegah border hairline 1px jika ukurannya diseting 0 di config
+          border: widget.config.borderWidth > 0
               ? Border.all(
-                  color: widget.model.borderColor,
-                  width: widget.model.borderWidth,
+                  color: widget.config.borderColor,
+                  width: widget.config.borderWidth,
                 )
               : null,
           borderRadius: BorderRadius.circular(20),
@@ -51,7 +48,7 @@ class _MainButtonState extends State<MainButton> {
               ? []
               : [
                   BoxShadow(
-                    color: widget.model.shadowColor,
+                    color: widget.config.shadowColor,
                     offset: const Offset(0, 4), // Offset bayangan Y yaitu 4
                     blurRadius: 0,
                   ),
@@ -59,11 +56,11 @@ class _MainButtonState extends State<MainButton> {
         ),
         child: Center(
           child: Text(
-            widget.model.label,
+            widget.config.label,
             style: TextStyle(
-              fontWeight: FontWeight(widget.model.fontWeight),
-              fontSize: widget.model.fontSize,
-              color: widget.model.fontColor,
+              fontWeight: FontWeight(widget.config.fontWeight),
+              fontSize: widget.config.fontSize,
+              color: widget.config.fontColor,
             ),
           ),
         ),

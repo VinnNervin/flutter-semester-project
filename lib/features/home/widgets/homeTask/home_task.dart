@@ -1,8 +1,8 @@
 import 'package:first_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class TaskComponent extends StatelessWidget {
-  const TaskComponent({super.key});
+class HomeTask extends StatelessWidget {
+  const HomeTask({super.key});
 
   @override
   Widget build(BuildContext context) {

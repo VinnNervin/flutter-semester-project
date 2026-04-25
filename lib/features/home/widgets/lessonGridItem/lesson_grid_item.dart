@@ -10,6 +10,7 @@ class LessonGridItem extends StatelessWidget {
   final String label;
   final IconData icon;
   final bool isFullWidth;
+  final double fontSize;
 
   const LessonGridItem({
     super.key,
@@ -20,6 +21,7 @@ class LessonGridItem extends StatelessWidget {
     required this.iconColor,
     required this.icon,
     this.isFullWidth = false,
+    required this.fontSize,
   });
 
   @override
@@ -41,9 +43,9 @@ class LessonGridItem extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: fontSize,
               color: AppColors.white,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

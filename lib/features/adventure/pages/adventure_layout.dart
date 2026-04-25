@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:first_app/core/widgets/DynamicButton/Dynamic_Button.dart';
-import 'package:first_app/core/widgets/DynamicButton/dynamic_button_model.dart';
+import 'package:first_app/core/widgets/DynamicButton/dynamic_button_config.dart';
 import 'package:first_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,13 +8,11 @@ import 'package:flutter/services.dart';
 class AdventureLayout extends StatelessWidget {
   const AdventureLayout({super.key});
 
-  // Fungsi untuk membaca file JSON
   Future<Map<String, dynamic>> loadChapterData() async {
-    // 1. Ambil String dari Assets
     final String response = await rootBundle.loadString(
       'assets/data/chapter_1.json',
     );
-    // 2. Ubah String jadi Map (Object Dart)
+
     final data = await json.decode(response);
     return data;
   }
@@ -25,17 +23,14 @@ class AdventureLayout extends StatelessWidget {
       child: FutureBuilder<Map<String, dynamic>>(
         future: loadChapterData(),
         builder: (context, snapshot) {
-          // A. Jika data masih loading
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           }
 
-          // B. Jika terjadi error
           if (snapshot.hasError) {
             return Center(child: Text("Error: ${snapshot.error}"));
           }
 
-          // C. Jika data sudah siap
           if (snapshot.hasData) {
             final chapter = snapshot.data!;
             final lessons = chapter['lessons'] as List;
@@ -52,7 +47,6 @@ class AdventureLayout extends StatelessWidget {
                 ),
                 child: CustomScrollView(
                   slivers: [
-                    // 1. HEADER (Tampilan Penuh / Full Width)
                     SliverToBoxAdapter(
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
@@ -72,7 +66,6 @@ class AdventureLayout extends StatelessWidget {
                             ),
                             SizedBox(height: 20),
 
-                            // circle box with book icon
                             Container(
                               width: 80,
                               height: 80,
@@ -87,34 +80,32 @@ class AdventureLayout extends StatelessWidget {
                       ),
                     ),
 
-                    // 2. GRID (Pelajaran Tampil 2 Kolom)
                     SliverPadding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       sliver: SliverGrid(
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount:
-                                  2, // <--- Ini yang membuat 2 Kolom
+                              crossAxisCount: 2,
                               mainAxisSpacing: 16,
                               crossAxisSpacing: 16,
-                              childAspectRatio:
-                                  1.1, // Atur tinggi kotak di sini
+                              childAspectRatio: 1.1,
                             ),
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) {
-                            final lesson = lessons[index];
-                            return DynamicButton(
-                              model: DynamicButtonModel(
-                                fontColor: AppColors.white,
-                                shadowColor: Colors.black.withAlpha(50),
-                                label: lesson['lesson_title'],
-                                backgroundColor: Colors.blue,
+                        delegate: SliverChildBuilderDelegate((context, index) {
+                          final lesson = lessons[index];
+                          return DynamicButton(
+                            config: DynamicButtonConfig(
+                              fontColor: AppColors.white,
+                              shadowColor: Colors.black.withAlpha(50),
+                              label: lesson['lesson_title'],
+                              backgroundColor: const Color.fromRGBO(
+                                33,
+                                150,
+                                243,
+                                1,
                               ),
-                            );
-                          },
-                          childCount:
-                              lessons.length, // Jumlah pelajaran dari JSON
-                        ),
+                            ),
+                          );
+                        }, childCount: lessons.length),
                       ),
                     ),
 

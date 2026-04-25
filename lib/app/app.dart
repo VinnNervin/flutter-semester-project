@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'routes.dart';
 
 class MyApp extends StatelessWidget {
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'flutter app',
       debugShowCheckedModeBanner: false,
       initialRoute: AppRoutes.initial,
+      theme: ThemeData(textTheme: GoogleFonts.geologicaTextTheme()),
       routes: AppRoutes.routes,
     );
   }
