@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const primary = Color.fromARGB(255, 160, 85, 247);
-  static const primaryAccent = Color.fromARGB(255, 184, 125, 251);
-  static const primaryLight = Color.fromARGB(255, 244, 233, 255);
+  // ==================== BASE COLOR ====================
+  static const blue = Color.fromRGBO(33, 150, 243, 1);
+  static const blueAccent = Color.fromRGBO(15, 118, 210, 1);
+  static const blueLight = Color.fromARGB(255, 129, 191, 234);
 
-  static const mainBgColor = Color.fromARGB(255, 237, 220, 255);
-
-  static const secondary = Color.fromARGB(255, 95, 212, 5);
-  static const secondaryAccent = Color.fromARGB(255, 138, 242, 59);
-  static const secondaryLight = Color.fromARGB(255, 220, 250, 198);
-
-  // static const background = Color.fromRGBO(248, 250, 252, 1);
-
-  static const blue = Color.fromARGB(255, 96, 87, 255);
-  static const blueAccent = Color.fromARGB(255, 145, 137, 255);
+  static const purple = Color.fromARGB(255, 160, 85, 247);
+  static const purpleAccent = Color.fromARGB(255, 184, 125, 251);
+  static const purpleLight = Color.fromARGB(255, 244, 233, 255);
 
   static const red = Color(0xFFe94f4f);
   static const redAccent = Color.fromARGB(255, 241, 119, 119);
@@ -27,4 +21,15 @@ class AppColors {
   static const grey = Color.fromARGB(255, 231, 231, 231);
 
   static const white = Color(0xFFFFFFFF);
+
+  // ==================== TEMPLATE COLOR ====================
+  static const primary = blue;
+  static const primaryAccent = blueAccent;
+  static const primaryLight = blueLight;
+
+  static const mainBgColor = Color.fromARGB(255, 237, 220, 255);
+
+  static const secondary = Color.fromARGB(255, 95, 212, 5);
+  static const secondaryAccent = Color.fromARGB(255, 138, 242, 59);
+  static const secondaryLight = Color.fromARGB(255, 220, 250, 198);
 }
