@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // ==================== BASE COLOR ====================
-  static const blue = Color.fromRGBO(33, 150, 243, 1);
-  static const blueAccent = Color.fromRGBO(15, 118, 210, 1);
-  static const blueLight = Color.fromARGB(255, 129, 191, 234);
+  static const blue = Color.fromRGBO(93, 181, 253, 1);
+  static const blueAccent = Color.fromRGBO(98, 178, 243, 1);
+  static const blueLight = Color.fromARGB(255, 182, 217, 242);
 
   static const purple = Color.fromARGB(255, 160, 85, 247);
   static const purpleAccent = Color.fromARGB(255, 184, 125, 251);
-  static const purpleLight = Color.fromARGB(255, 244, 233, 255);
+  static const purpleLight = Color.fromARGB(255, 200, 153, 248);
 
   static const red = Color(0xFFe94f4f);
   static const redAccent = Color.fromARGB(255, 241, 119, 119);

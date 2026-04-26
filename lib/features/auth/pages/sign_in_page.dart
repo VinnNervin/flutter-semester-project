@@ -61,7 +61,7 @@ class _SignInPageState extends State<SignInPage> {
           child: LoginForm(
             emailController: emailController,
             passwordController: passwordController,
-            onSUbmit: _handleSignIn,
+            onSubmit: _handleSignIn,
           ),
         ),
       ),

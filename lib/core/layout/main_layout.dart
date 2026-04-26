@@ -17,11 +17,11 @@ class _MainLayoutState extends State<MainLayout> {
   int currentIndex = 0;
 
   final List<Widget> pages = [
-    HomePage(),
-    AdventureLayout(),
+    const HomePage(),
+    const AdventureLayout(),
     MissionPage(),
     MissionPage(),
-    ProfilePage(),
+    const ProfilePage(),
   ];
 
   @override

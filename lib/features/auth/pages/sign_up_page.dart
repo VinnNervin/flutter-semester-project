@@ -62,7 +62,7 @@ class _SignUpPageState extends State<SignUpPage> {
           emailController: emailController,
           passwordController: passwordController,
           confirmPasswordController: confirmPasswordController,
-          onSUbmit: _handleSignUp,
+          onSubmit: _handleSignUp,
         ),
       ),
     );

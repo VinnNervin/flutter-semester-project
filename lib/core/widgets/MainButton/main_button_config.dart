@@ -12,7 +12,9 @@ class MainButtonConfig {
   final Color fontColor;
   final double width;
   final double height;
-  final VoidCallback? onPressed;
+  final IconData? icon;
+  final Color? iconColor;
+  final double iconSize;
 
   const MainButtonConfig({
     this.label = "",
@@ -25,6 +27,41 @@ class MainButtonConfig {
     this.height = 65,
     this.width = double.infinity,
     this.borderWidth = 0,
-    this.onPressed,
+    this.icon,
+    this.iconColor,
+    this.iconSize = 24,
   });
+
+  MainButtonConfig copyWith({
+    String? label,
+    double? fontSize,
+    int? fontWeight,
+    double? borderWidth,
+    Color? borderColor,
+    Color? shadowColor,
+    Color? backgroundColor,
+    Color? fontColor,
+    double? width,
+    double? height,
+    VoidCallback? onPressed,
+    IconData? icon,
+    Color? iconColor,
+    double? iconSize,
+  }) {
+    return MainButtonConfig(
+      label: label ?? this.label,
+      fontSize: fontSize ?? this.fontSize,
+      fontWeight: fontWeight ?? this.fontWeight,
+      borderWidth: borderWidth ?? this.borderWidth,
+      borderColor: borderColor ?? this.borderColor,
+      shadowColor: shadowColor ?? this.shadowColor,
+      backgroundColor: backgroundColor ?? this.backgroundColor,
+      fontColor: fontColor ?? this.fontColor,
+      width: width ?? this.width,
+      height: height ?? this.height,
+      icon: icon ?? this.icon,
+      iconColor: iconColor ?? this.iconColor,
+      iconSize: iconSize ?? this.iconSize,
+    );
+  }
 }

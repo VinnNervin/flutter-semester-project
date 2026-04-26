@@ -1,3 +1,4 @@
+import 'package:first_app/core/widgets/ImageBox/image_box.dart';
 import 'package:first_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -17,18 +18,7 @@ class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
             Row(
               spacing: 10,
               children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(100)),
-                  ),
-                  child: Image.network(
-                    "https://i.pravatar.cc/150?img=12",
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                ImageBox.network("https://i.pravatar.cc/150?img=12"),
 
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,

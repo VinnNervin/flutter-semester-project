@@ -10,14 +10,14 @@ class LoginForm extends StatelessWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final TextEditingController? confirmPasswordController;
-  final VoidCallback onSUbmit;
+  final VoidCallback onSubmit;
 
   const LoginForm({
     super.key,
     required this.emailController,
     required this.passwordController,
     this.confirmPasswordController,
-    required this.onSUbmit,
+    required this.onSubmit,
   });
 
   @override
@@ -99,6 +99,7 @@ class LoginForm extends StatelessWidget {
           ],
           const SizedBox(height: 26),
           MainButton(
+            onPressed: onSubmit,
             config: MainButtonConfig(
               width: double.infinity,
               shadowColor: AppColors.primary.withValues(alpha: 0.5),
@@ -106,7 +107,6 @@ class LoginForm extends StatelessWidget {
                   ? "SIGN UP"
                   : "SIGN IN"),
               fontColor: Colors.white,
-              onPressed: onSUbmit,
             ),
           ),
           const SizedBox(height: 16),
