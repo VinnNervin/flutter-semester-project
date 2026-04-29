@@ -1,3 +1,4 @@
+import 'package:first_app/core/widgets/AppBarText/app_bar_text.dart';
 import 'package:first_app/core/widgets/FlatButton/flat_button.dart';
 import 'package:first_app/features/setting/models/setting_item_model.dart';
 import 'package:first_app/theme/app_colors.dart';
@@ -34,15 +35,7 @@ class SettingPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.white,
-      appBar: AppBar(
-        title: const Text(
-          'Pengaturan',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        foregroundColor: AppColors.black,
-      ),
+      appBar: AppBarText(label: 'Pengaturan'),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(AppSizing.paddingSM),
         child: Column(

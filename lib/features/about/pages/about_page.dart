@@ -54,7 +54,7 @@ class AboutPage extends StatelessWidget {
 
             const SizedBox(height: 30),
             Text(
-              '© 2024 SpeakUp Team',
+              '© 2026 SpeakUp',
               style: TextStyle(
                 color: AppColors.black.withValues(alpha: 0.5),
                 fontSize: AppFonts.fontSmall,
