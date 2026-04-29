@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 class LoginForm extends StatelessWidget {
+  final TextEditingController? nameController;
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final TextEditingController? confirmPasswordController;
@@ -14,6 +15,7 @@ class LoginForm extends StatelessWidget {
 
   const LoginForm({
     super.key,
+    this.nameController,
     required this.emailController,
     required this.passwordController,
     this.confirmPasswordController,
@@ -70,6 +72,16 @@ class LoginForm extends StatelessWidget {
                 : TextSpan(text: "Welcome back"),
           ),
           const SizedBox(height: 20),
+          if (confirmPasswordController != null)
+            AuthTextfield(
+              controller: nameController!,
+              label: 'Name',
+              hintText: 'Enter your name',
+              autocorrect: false,
+              enableSuggestions: false,
+              icon: LucideIcons.mail,
+            ),
+          const SizedBox(height: 10),
           AuthTextfield(
             controller: emailController,
             label: 'Email',

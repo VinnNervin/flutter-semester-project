@@ -22,10 +22,7 @@ class _SignInPageState extends State<SignInPage> {
     );
 
     if (success) {
-      // Navigator.pushReplacement(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomePage()),
-      // );
+      Navigator.popAndPushNamed(context, '/home');
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(

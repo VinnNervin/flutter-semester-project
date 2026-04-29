@@ -12,22 +12,24 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   final AuthController _controller = AuthController();
 
+  final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
   void _handleSignUp() async {
     final success = await _controller.signUp(
+      nameController.text,
       emailController.text,
       confirmPasswordController.text,
       passwordController.text,
     );
 
     if (success) {
-      Navigator.popAndPushNamed(context, '/home');
+      // Navigator.popAndPushNamed(context, '/');
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text('login success')));
+      ).showSnackBar(const SnackBar(content: Text('Sign Up success')));
     } else {
       ScaffoldMessenger.of(
         context,
@@ -39,6 +41,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   void dispose() {
+    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
@@ -59,6 +62,7 @@ class _SignUpPageState extends State<SignUpPage> {
         height: double.infinity,
         alignment: Alignment.bottomCenter,
         child: LoginForm(
+          nameController: nameController,
           emailController: emailController,
           passwordController: passwordController,
           confirmPasswordController: confirmPasswordController,

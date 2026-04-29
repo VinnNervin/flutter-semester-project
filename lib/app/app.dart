@@ -11,7 +11,10 @@ class MyApp extends StatelessWidget {
       title: 'flutter app',
       debugShowCheckedModeBanner: false,
       initialRoute: AppRoutes.initial,
-      theme: ThemeData(textTheme: GoogleFonts.geologicaTextTheme()),
+      theme: ThemeData(
+        useMaterial3: true, 
+        textTheme: GoogleFonts.geologicaTextTheme(),
+      ),
       routes: AppRoutes.routes,
     );
   }

@@ -1,5 +1,6 @@
 import 'package:first_app/core/widgets/ImageBox/image_box.dart';
 import 'package:first_app/theme/app_colors.dart';
+import 'package:first_app/theme/app_sizing.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
@@ -9,8 +10,10 @@ class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        color: AppColors.white,
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSizing.paddingSM,
+          vertical: AppSizing.paddingXS,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

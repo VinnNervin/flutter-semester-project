@@ -43,32 +43,14 @@ class AboutPage extends StatelessWidget {
             ),
             const SizedBox(height: 40),
 
-            // Group Section
             _buildSectionHeader('Kelompok Pecinta Blonde'),
             const SizedBox(height: 15),
 
-            // Team Members List
-            _buildMemberCard(
-              name: 'Leon Yaputra',
-              nim: '241130251',
-              role: 'Ketua Kelompok',
-            ),
-            _buildMemberCard(
-              name: 'Stanley Sun',
-              nim: '241130212',
-              role: 'Anggota',
-            ),
-            _buildMemberCard(
-              name: 'Leonardo Muliangga',
-              nim: '241130726',
-              role: 'Anggota',
-            ),
-            _buildMemberCard(name: 'Edbert', nim: '241130865', role: 'Anggota'),
-            _buildMemberCard(
-              name: 'Charles',
-              nim: '241130269',
-              role: 'Anggota',
-            ),
+            _buildMemberCard(name: 'Charles', nim: '241130269'),
+            _buildMemberCard(name: 'Edbert', nim: '241130865'),
+            _buildMemberCard(name: 'Leon Yaputra', nim: '241130251'),
+            _buildMemberCard(name: 'Stanley Sun', nim: '241130212'),
+            _buildMemberCard(name: 'Leonardo Muliangga', nim: '241130726'),
 
             const SizedBox(height: 30),
             Text(
@@ -105,11 +87,7 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMemberCard({
-    required String name,
-    required String nim,
-    required String role,
-  }) {
+  Widget _buildMemberCard({required String name, required String nim}) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(15),
@@ -123,10 +101,7 @@ class AboutPage extends StatelessWidget {
             offset: const Offset(0, 4),
           ),
         ],
-        border: Border.all(
-          color: AppColors.grey,
-          width: 1,
-        ),
+        border: Border.all(color: AppColors.grey, width: 1),
       ),
       child: Row(
         children: [
@@ -161,21 +136,6 @@ class AboutPage extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            decoration: BoxDecoration(
-              color: AppColors.grey,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Text(
-              role,
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-                color: AppColors.black.withValues(alpha: 0.6),
-              ),
             ),
           ),
         ],

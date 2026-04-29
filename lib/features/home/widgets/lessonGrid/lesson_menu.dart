@@ -3,6 +3,7 @@ import 'package:first_app/features/home/widgets/introText/intro_text.dart';
 import 'package:first_app/features/home/widgets/lessonGridItem/lesson_grid_item.dart';
 import 'package:first_app/theme/app_colors.dart';
 import 'package:first_app/theme/app_fonts.dart';
+import 'package:first_app/theme/app_sizing.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
@@ -56,6 +57,7 @@ class LessonMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: AppSizing.paddingMD),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -1,3 +1,5 @@
+import 'package:first_app/features/auth/models/signin_request_model.dart';
+import 'package:first_app/features/auth/models/signup_request_model.dart';
 import 'package:first_app/features/auth/models/user_model.dart';
 import 'package:first_app/features/auth/services/auth_services.dart';
 
@@ -10,9 +12,9 @@ class AuthController {
   Future<bool> login(String email, String password) async {
     isLoading = true;
 
+    print({email, password});
     final result = await _authService.login(
-      email.trim().toLowerCase(),
-      password,
+      SigninRequestModel(email: email, password: password),
     );
 
     isLoading = false;
@@ -26,6 +28,7 @@ class AuthController {
   }
 
   Future<bool> signUp(
+    String name,
     String email,
     String password,
     String confirmPassword,
@@ -33,9 +36,12 @@ class AuthController {
     isLoading = true;
 
     final result = await _authService.signUp(
-      email.trim().toLowerCase(),
-      password,
-      confirmPassword,
+      SignupRequestModel(
+        name: name,
+        email: email,
+        password: password,
+        confirmPassword: confirmPassword,
+      ),
     );
 
     isLoading = false;

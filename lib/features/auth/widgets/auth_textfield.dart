@@ -12,9 +12,11 @@ class AuthTextfield extends StatelessWidget {
   final IconData icon;
   final String additionalText;
   final Color labelColor;
+  final String? Function(String?)? validator;
 
   const AuthTextfield({
     super.key,
+    this.validator,
     required this.controller,
     required this.label,
     required this.hintText,
