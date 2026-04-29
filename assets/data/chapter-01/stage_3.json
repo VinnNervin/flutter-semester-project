@@ -1,0 +1,125 @@
+{
+"stage_name": "salam Dasar 2",
+"question" : [
+  {
+    "id": "q_s1_001",
+    "type": "multiple_choice",
+    "question": "Apa arti dari kata 'Hello'?",
+    "options": [
+      "Halo",
+      "Selamat tinggal",
+      "Terima kasih"
+    ],
+    "correctIndex": 0,
+    "explanation": "Hello berarti Halo."
+  },
+  {
+    "id": "q_s1_002",
+    "type": "multiple_choice",
+    "question": "Kata sapaan singkat untuk 'Halo' adalah...",
+    "options": [
+      "Bye",
+      "Hi",
+      "Sorry"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hi adalah bentuk sapaan singkat dari Hello."
+  },
+  {
+    "id": "q_s1_003",
+    "type": "multiple_choice",
+    "question": "Apa arti dari kata 'Goodbye'?",
+    "options": [
+      "Selamat pagi",
+      "Sampai jumpa",
+      "Permisi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Goodbye digunakan saat berpisah, artinya sampai jumpa."
+  },
+  {
+    "id": "q_s1_004",
+    "type": "multiple_choice",
+    "question": "Jika bertemu teman di pagi hari, kata yang tepat adalah...",
+    "options": [
+      "Good morning",
+      "Goodbye",
+      "Thank you"
+    ],
+    "correctIndex": 0,
+    "explanation": "Good morning berarti Selamat pagi."
+  },
+  {
+    "id": "q_s1_005",
+    "type": "multiple_choice",
+    "question": "Apa arti dari kata 'Bye'?",
+    "options": [
+      "Sampai jumpa",
+      "Halo",
+      "Tolong"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bye digunakan saat berpisah, artinya sampai jumpa."
+  },
+  {
+    "id": "q_s1_006",
+    "type": "multiple_choice",
+    "question": "Manakah kata sapaan saat bertemu seseorang?",
+    "options": [
+      "Hello",
+      "Bye",
+      "Goodbye"
+    ],
+    "correctIndex": 0,
+    "explanation": "Hello digunakan saat bertemu seseorang."
+  },
+  {
+    "id": "q_s1_007",
+    "type": "multiple_choice",
+    "question": "Manakah kata yang digunakan saat berpisah?",
+    "options": [
+      "Hi",
+      "Goodbye",
+      "Hello"
+    ],
+    "correctIndex": 1,
+    "explanation": "Goodbye digunakan saat berpisah."
+  },
+  {
+    "id": "q_s1_008",
+    "type": "multiple_choice",
+    "question": "Apa arti dari 'Good morning'?",
+    "options": [
+      "Selamat malam",
+      "Selamat pagi",
+      "Sampai jumpa"
+    ],
+    "correctIndex": 1,
+    "explanation": "Good morning berarti Selamat pagi."
+  },
+  {
+    "id": "q_s1_009",
+    "type": "multiple_choice",
+    "question": "Pilih kata yang berarti 'Hai'.",
+    "options": [
+      "Hi",
+      "Bye",
+      "Sorry"
+    ],
+    "correctIndex": 0,
+    "explanation": "Hi berarti Hai."
+  },
+  {
+    "id": "q_s1_010",
+    "type": "multiple_choice",
+    "question": "Jika kamu ingin menyapa teman, kamu bisa mengatakan...",
+    "options": [
+      "Hello",
+      "Goodbye",
+      "Excuse me"
+    ],
+    "correctIndex": 0,
+    "explanation": "Hello digunakan untuk menyapa seseorang."
+  }
+]
+}

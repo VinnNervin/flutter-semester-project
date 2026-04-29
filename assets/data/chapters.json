@@ -10,6 +10,18 @@
         "stage_name": "Salam Dasar",
         "file": "assets/data/chapter-01/stage_1.json",
         "total_questions": 10
+      },
+      {
+        "stage_id": "s2",
+        "stage_name": "Salam Dasar 2",
+        "file": "assets/data/chapter-01/stage_2.json",
+        "total_questions": 10
+      },
+      {
+        "stage_id": "s3",
+        "stage_name": "Salam Dasar 3",
+        "file": "assets/data/chapter-01/stage_3.json",
+        "total_questions": 10
       }
     ]
   }
