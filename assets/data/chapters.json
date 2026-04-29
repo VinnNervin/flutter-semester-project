@@ -1,0 +1,16 @@
+[
+  {
+    "chapter_id": "chapter-01",
+    "chapter_title": "Greetings & Introductions",
+    "chapter_desc": "Pelajari dasar-dasar salam dan perkenalan dalam bahasa Inggris.",
+    "icon": "book",
+    "stages": [
+      {
+        "stage_id": "s1",
+        "stage_name": "Salam Dasar",
+        "file": "assets/data/chapter-01/stage_1.json",
+        "total_questions": 10
+      }
+    ]
+  }
+]
