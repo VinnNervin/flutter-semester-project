@@ -1,8 +1,8 @@
+import 'package:first_app/core/widgets/FlatButton/flat_button.dart';
 import 'package:first_app/features/about/pages/about_page.dart';
+import 'package:first_app/features/setting/pages/setting_page.dart';
 import 'package:first_app/features/profile/models/user_statistic.dart';
 import 'package:first_app/features/profile/widgets/profile_card.dart';
-import 'package:first_app/theme/app_colors.dart';
-import 'package:first_app/theme/app_fonts.dart';
 import 'package:first_app/theme/app_sizing.dart';
 import 'package:flutter/material.dart';
 
@@ -21,10 +21,9 @@ class ProfilePage extends StatelessWidget {
         children: [
           ProfileCard(userStatisticProfile: userStatisticProfile),
           const SizedBox(height: 20),
-          _buildAboutButton(
-            context,
-            icon: Icons.info_outline_rounded,
-            title: 'Tentang Kami',
+          FlatButton(
+            label: 'Tentang Kami',
+            config: const FlatButtonConfig(icon: Icons.info),
             onTap: () {
               Navigator.push(
                 context,
@@ -32,46 +31,17 @@ class ProfilePage extends StatelessWidget {
               );
             },
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildAboutButton(
-    BuildContext context, {
-    required IconData icon,
-    required String title,
-    required VoidCallback onTap,
-  }) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+          FlatButton(
+            label: 'Pengaturan',
+            config: const FlatButtonConfig(icon: Icons.settings),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingPage()),
+              );
+            },
           ),
         ],
-      ),
-      child: ListTile(
-        leading: Icon(icon, color: AppColors.red),
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontSize: AppFonts.fontMedium,
-            fontWeight: FontWeight.w600,
-            color: AppColors.black,
-          ),
-        ),
-        trailing: const Icon(
-          Icons.chevron_right_rounded,
-          color: AppColors.grey,
-        ),
-        onTap: onTap,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       ),
     );
   }

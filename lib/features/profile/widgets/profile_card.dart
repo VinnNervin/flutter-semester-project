@@ -1,4 +1,5 @@
 import 'package:first_app/core/widgets/ImageBox/image_box.dart';
+import 'package:first_app/core/widgets/ImageBox/image_box_config.dart';
 import 'package:first_app/core/widgets/MainButton/main_button.dart';
 import 'package:first_app/core/widgets/MainButton/main_button_config.dart';
 import 'package:first_app/features/profile/models/user_statistic.dart';

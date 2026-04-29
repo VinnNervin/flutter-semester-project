@@ -4,7 +4,6 @@ import 'package:first_app/core/widgets/HomepageHeader/home_header.dart';
 import 'package:first_app/features/home/widgets/lessonGrid/lesson_menu.dart';
 // import 'package:first_app/features/home/widgets/homeTask/home_task.dart';
 import 'package:first_app/theme/app_colors.dart';
-import 'package:first_app/theme/app_sizing.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
