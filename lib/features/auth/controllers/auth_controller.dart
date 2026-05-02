@@ -12,7 +12,6 @@ class AuthController {
   Future<bool> login(String email, String password) async {
     isLoading = true;
 
-    print({email, password});
     final result = await _authService.login(
       SigninRequestModel(email: email, password: password),
     );

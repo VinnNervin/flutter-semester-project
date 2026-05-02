@@ -1,8 +1,5 @@
-// d:\VS Code\flutter\first_app\lib\features\home\pages\home_page.dart
-
 import 'package:first_app/core/widgets/HomepageHeader/home_header.dart';
 import 'package:first_app/features/home/widgets/lessonGrid/lesson_menu.dart';
-// import 'package:first_app/features/home/widgets/homeTask/home_task.dart';
 import 'package:first_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -11,26 +8,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final singleButtonData = DynamicButtonModel(
-    //   label: "Testing",
-    //   backgroundColor: Colors.blue,
-    //   borderColor: Colors.white,
-    //   shadowColor: Colors.black12,
-    // );
-
     return Container(
       decoration: BoxDecoration(color: AppColors.white),
       child: SingleChildScrollView(
-        // padding: EdgeInsets.symmetric(vertical: AppSizing.paddingLG),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           spacing: 20,
-          children: [
-            HomeHeader(),
-            // DynamicButton(config: singleButtonData),
-            LessonMenu(),
-            // HomeTask(),
-          ],
+          children: [HomeHeader(), LessonMenu()],
         ),
       ),
     );

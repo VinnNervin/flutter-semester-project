@@ -86,7 +86,7 @@ class LessonMenu extends StatelessWidget {
                       child: InkWell(
                         borderRadius: BorderRadius.circular(20),
                         onTap: () {
-                          print('click');
+                          // print('click');
                         },
                         child: LessonGridItem(
                           fontSize: menu.fontSize,

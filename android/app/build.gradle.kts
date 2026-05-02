@@ -1,3 +1,4 @@
+import groovy.json.JsonSlurper
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -6,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.first_app"
+    namespace = "com.kelompokblonde.speakup"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.1.12297006"
 
@@ -19,11 +20,15 @@ android {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
+    val configJson = JsonSlurper().parse(file("../../config/config.base.json")) as Map<String, Any>
+    val myAppName = configJson["APP_NAME"] as String
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.first_app"
+        applicationId = "com.kelompokblonde.speakup"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
+        manifestPlaceholders["appName"] = myAppName
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

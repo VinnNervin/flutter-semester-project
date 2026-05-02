@@ -91,7 +91,6 @@ class _AdventureLayoutState extends State<AdventureLayout> {
             style: const TextStyle(color: Colors.grey),
           ),
           const SizedBox(height: 10),
-          // Badge jumlah stage
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             decoration: BoxDecoration(
@@ -125,7 +124,6 @@ class _AdventureLayoutState extends State<AdventureLayout> {
     );
   }
 
-  // Satu chapter = satu section (header + grid stage)
   SliverMainAxisGroup _buildChapterSection(ChapterModel chapter) {
     return SliverMainAxisGroup(
       slivers: [
